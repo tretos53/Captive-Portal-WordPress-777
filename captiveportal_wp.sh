@@ -119,5 +119,12 @@ STRING='put your unique phrase here'
 printf '%s\n' "g/$STRING/d" a "$SALT" . w | ed -s /var/www/wordpress/wp-config.php
 
 echo "┌─────────────────────────────────────────"
+echo "|Configuring system logs"
+echo "└─────────────────────────────────────────"
+wget -q https://raw.githubusercontent.com/tretos53/Captive-Portal-777/master/system_status.sh -O /home/cybershark/system_status.sh
+wget -q https://raw.githubusercontent.com/tretos53/Captive-Portal-777/master/logrotate.conf -O /etc/logrotate.conf
+echo "0 13 * * * bash /home/cybershark/system_status.sh >> /home/cybershark/systemstatus.log" | crontab -
+
+echo "┌─────────────────────────────────────────"
 echo "|Reboot and test"
 echo "└─────────────────────────────────────────"
