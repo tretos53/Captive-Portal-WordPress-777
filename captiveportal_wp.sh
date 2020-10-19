@@ -17,7 +17,7 @@ echo "|This script might take a while,"
 echo "|so if you dont see much progress,"
 echo "|wait till you see --all done-- message."
 echo "└─────────────────────────────────────────"
-read -p "Press enter to continue"
+read -p -r "Press enter to continue"
 
 echo "┌─────────────────────────────────────────"
 echo "|Updating repositories"
